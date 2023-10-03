@@ -1,12 +1,17 @@
 import React from "react";
 
-import products from "../items/product";
-
 import ItemsDetail from "./ItemsDetail";
+import { useSelector } from "react-redux";
+import {
+  productsSelector,
+  
+} from "../redux/billGatesSlice";
 
 const Items = () => {
+  const products = useSelector(productsSelector);
+  
   return (
-    <div className="flex flex-wrap justify-between my-4">
+    <div className="flex flex-wrap justify-center my-4">
       {products.map((prod, idx) => (
         <ItemsDetail key={idx} prod={prod} />
       ))}

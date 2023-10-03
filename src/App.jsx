@@ -4,13 +4,21 @@ import React from "react";
 import Title from "./components/Title";
 import MoneyBar from "./components/MoneyBar";
 import Items from "./components/Items";
+import Card from "./components/card";
+
+//redux
+import { cardTotalSelector } from "./redux/billGatesSlice";
+import { useSelector } from "react-redux";
 
 function App() {
+  const cardTotal = useSelector(cardTotalSelector);
+
   return (
-    <div className="flex flex-col items-center w-[1000px]">
+    <div className="flex flex-col items-center w-[1000px] ">
       <Title />
       <MoneyBar />
       <Items />
+      {cardTotal > 0 && <Card />}
     </div>
   );
 }
