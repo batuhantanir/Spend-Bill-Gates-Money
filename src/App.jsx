@@ -4,7 +4,7 @@ import React from "react";
 import Title from "./components/Title";
 import MoneyBar from "./components/MoneyBar";
 import Items from "./components/Items";
-import Card from "./components/card";
+import Card from "./components/Card";
 
 //redux
 import { cardTotalSelector } from "./redux/billGatesSlice";
